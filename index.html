@@ -2,65 +2,37 @@
 
 <html lang="en">
     <head>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link href="styles.css" rel="stylesheet">
-        <title>Trivia!</title>
-        <script>
-            function checkMultipleChoice() {
-                let selected = document.querySelector('input[name="question1"]:checked');
-                if (selected) {
-                    let answer = selected.value;
-                    let result = document.getElementById("mcq-result");
-                    if (answer === "Paris") {
-                        result.innerText = "Correct!";
-                        result.style.color = "green";
-                    } else {
-                        result.innerText = "Incorrect. Try again!";
-                        result.style.color = "red";
-                    }
-                }
-            }
-
-            function checkFreeResponse() {
-                let answer = document.getElementById("response").value.trim().toLowerCase();
-                let result = document.getElementById("frq-result");
-                if (answer === "gravity") {
-                    result.innerText = "Correct!";
-                    result.style.color = "green";
-                } else {
-                    result.innerText = "Incorrect. Try again!";
-                    result.style.color = "red";
-                }
-            }
-
-        </script>
+        <title>My Webpage</title>
     </head>
     <body>
-        <div class="header">
-            <h1>Trivia!</h1>
-        </div>
-
+    <nav class="navbar">
         <div class="container">
-            <div class="section">
-                <h2>Part 1: Multiple Choice </h2>
-                <hr>
-                <p>What is the capital of France?</p>
-                <input type="radio" name="question1" value="London"> London<br>
-                <input type="radio" name="question1" value="Berlin"> Berlin<br>
-                <input type="radio" name="question1" value="Paris"> Paris<br>
-                <input type="radio" name="question1" value="Madrid"> Madrid<br>
-                <button onclick="checkMultipleChoice()">Submit</button>
-                <p id="mcq-result"></p>
-            </div>
-
-            <div class="section">
-                <h2>Part 2: Free Response</h2>
-                <hr>
-                <p>What force keeps us on the ground?</p>
-                <input type="text" id="response">
-                <button onclick="checkFreeResponse()">Submit</button>
-                <p id="frq-result"></p>
-            </div>
+            <a class="brand" href="#">My Website</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <h1><b>Welcome to My Website</b></h1>
+        <p><b>CS50 WEEK-8 ASSIGNMENT, HOMEPAGE</b></p>
+        <button class="btn btn-primary" onclick="showMessage()">Click Me</button>
+        <p id="message" class="mt-3"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerText = "Hello! Thanks for visiting.";
+        }
+    </script>
     </body>
 </html>

@@ -1,0 +1,20 @@
+HTML Tags Used:
+<html> - Defines the root of the document.
+<head> - Contains metadata and links to stylesheets.
+<title> - Sets the title of the webpage.
+<link> - Links external CSS and Bootstrap stylesheets.
+<nav> - Creates the navigation bar.
+<ul> - Defines an unordered list for navigation links.
+<li> - Represents individual navigation items in the list.
+<a> - Creates hyperlinks to other pages.
+<button> - Adds an interactive button.
+<script> - Embeds JavaScript for interactivity.
+
+CSS Properties Used:
+background-color - Sets the background color of elements (e.g., navbar, buttons).
+color - Defines text color (e.g., white for navbar links).
+display - Controls element layout (e.g., flex for navbar alignment).
+text-decoration - Removes underlines from links and adds hover effects.
+transition - Adds smooth hover effects on buttons.
+
+FROM JavaScript, I have used to add an interactive message when the user clicks the "Click Me" button.
