@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function checkMultipleChoice() {
+                let selected = document.querySelector('input[name="question1"]:checked');
+                if (selected) {
+                    let answer = selected.value;
+                    let result = document.getElementById("mcq-result");
+                    if (answer === "Paris") {
+                        result.innerText = "Correct!";
+                        result.style.color = "green";
+                    } else {
+                        result.innerText = "Incorrect. Try again!";
+                        result.style.color = "red";
+                    }
+                }
+            }
+
+            function checkFreeResponse() {
+                let answer = document.getElementById("response").value.trim().toLowerCase();
+                let result = document.getElementById("frq-result");
+                if (answer === "gravity") {
+                    result.innerText = "Correct!";
+                    result.style.color = "green";
+                } else {
+                    result.innerText = "Incorrect. Try again!";
+                    result.style.color = "red";
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <p>What is the capital of France?</p>
+                <input type="radio" name="question1" value="London"> London<br>
+                <input type="radio" name="question1" value="Berlin"> Berlin<br>
+                <input type="radio" name="question1" value="Paris"> Paris<br>
+                <input type="radio" name="question1" value="Madrid"> Madrid<br>
+                <button onclick="checkMultipleChoice()">Submit</button>
+                <p id="mcq-result"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <p>What force keeps us on the ground?</p>
+                <input type="text" id="response">
+                <button onclick="checkFreeResponse()">Submit</button>
+                <p id="frq-result"></p>
+            </div>
+        </div>
+    </body>
+</html>
